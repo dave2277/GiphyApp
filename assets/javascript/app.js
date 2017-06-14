@@ -2,8 +2,6 @@
 //============================================
 var authKey = "dc6zaTOxFJmzC"//Giphy API Key goes here
 
-var results = ""
-
 var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + authKey//Can we put in the entire query string or do we need to just create a base?
 //Query parameters:
 //q:
@@ -12,6 +10,9 @@ var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + authKey//Can 
 
 var topics = ["camping", "hiking", "mountain biking", "snowboarding", "spelunking", "fly fishing", "sky diving", "rock climbing", "skiing", "snowshoeing", "jogging", "kayaking", "snorkeling", "hang gliding", " hot air ballooning"];
 
+var activity;
+
+var buttonLabel;
 
 //Functions
 //============================================
@@ -24,9 +25,9 @@ function makeButtons() {
 
 	for (i = 0; i < topics.length; i++) {
 
-		var activity = $("<button>");
+		activity = $("<button>");
 
-		activity.addClass = ("gifmaker");
+		activity.addClass("gifmaker");
 
 		activity.attr("data-name", topics[i]);
 
@@ -38,12 +39,19 @@ function makeButtons() {
 }
 makeButtons();
 
-$("#button").on("click", function() {
+$(document).on("click", ".gifmaker", function() {
 
 event.preventDefault;
 
 
+buttonLabel = $(this).attr("data-name");
+
+console.log(buttonLabel);
+
+
 });
+
+
 
 //Main Processes
 //============================================
