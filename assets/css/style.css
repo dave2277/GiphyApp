@@ -1,4 +1,22 @@
-.pictures {
+
+
+body {
+	font-family: 	
+}
+
+h2, p {
+	margin-left: 20px;
+}
+
+.gifmaker, #singlebutton {
+	margin-top: 10px;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	font-weight: bold;
+	box-shadow: 0px, 3px, 8px yellow;
+}
+
+.yummy {
 	float: left;
 	margin: 8px;
 }

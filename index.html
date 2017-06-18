@@ -19,22 +19,35 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
+			<div clas=" heading col-md-12">		
+			<h2>Outdoor Activity Giphy App</h2>
+			<p>Click one of the activity buttons to display ten gifs.  Then click on the gif to animate, and click again to stop.  You can also add a new button by typing an activity into the form, and pressing "Submit".</p>
+			</div><!-- End column -->
+		</div><!-- End row -->
+		<div>
+			<div>
+				<form class="form-horizontal">
+					<fieldset>
+							<div class="form-group">
+  								<div  class="col-md-3">
+  									<input id="textinput" name="textinput" type="text" placeholder="activity" class="form-control input-md">
+  									<button id="singlebutton" name="singlebutton" class="btn btn-info">Submit</button>
+  								</div>
+							</div>
+					</fieldset>
+				</form>
+			</div><!--End column -->
+		</div><!-- End row -->
+		<div class="row">
 			<div id="buttons" class="col-md-12">
 			</div><!-- End column -->
 		</div><!-- End row -->
 		<div class="row">
 			<div id="gifs" class ="col-md-8">
 			</div><!-- End column -->
-				<form class="form-horizontal">
-					<fieldset>
-							<div class="form-group">
-  								<div class="col-md-4">
-  									<input id="textinput" name="textinput" type="text" placeholder="activity" class="form-control input-md">
-  									<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
-  									</div>
-							</div>
-					</fieldset>
-				</form>
+			<div class="col-md-3">
+
+			</div><!-- End column -->
 		</div><!-- End row -->
 	</div>
 </body>

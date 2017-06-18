@@ -8,6 +8,7 @@ var stillGif;
 var animatedGif;
 var newGif;
 
+
 //Functions
 //============================================
 
@@ -23,6 +24,8 @@ function makeButtons() {
 		activity = $("<button>");
 
 		activity.addClass("gifmaker");
+
+		activity.addClass("btn-info")
 
 		activity.attr("data-name", topics[i]);
 
@@ -60,23 +63,49 @@ function makeButtons() {
 
 			animatedGif = response.data[i].images.fixed_height.url;
 
+			//Create images for each response and data attributes and  set default source
+
+			var tacos = $('<img src=' + stillGif + '>');
+
+			var tacoShells = $('<div>');
+
+			tacos.data("data-still", stillGif);
+
+			tacos.data("data-animate", animatedGif);
+
+			tacos.data("data-state", "still");
+
+			tacoShells.addClass("yummy");
+
+			tacos.addClass("giphies");		
+
 			//Display images and ratings on the page
-			$("#gifs").append('<div class="stillPictures"> <span class="ratings">Rating: ' + rating  + '</span><br><img class="images" src=' + stillGif + '></div>');
 
-			$(".stillPictures").on("click", function() {
+			$("#gifs").append(tacoShells);
 
-			$(".images").attr('src', animatedGif);
+			$(tacoShells).append('<span class="ratings">Rating: ' + 
+			rating + '</span><br>');
 
-
-			});
-
+			$(tacoShells).append(tacos);
 
 			}
 
-		})
-	}
+		});
+	};
 
 	//Function for changing state of image on click
+	$(document).on("click", ".giphies", function() {
+		var state = $(this).data("data-state");
+		if (state === "still") {
+			$(this).attr("src", $(this).data("data-animate"));
+			$(this).data("data-state", "animate");
+		} else {
+			$(this).attr("src", $(this).data("data-still"));
+			$(this).data("data-state", "still");
+		}
+
+	});
+
 
 	//Add button from form input
 	$("#singlebutton").on("click", function(event) {
