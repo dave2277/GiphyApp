@@ -24,7 +24,7 @@ function makeButtons() {
 
 		activity.addClass("gifmaker");
 
-		activity.addClass("btn-info")
+		activity.addClass("btn-submit")
 
 		activity.attr("data-name", topics[i]);
 
